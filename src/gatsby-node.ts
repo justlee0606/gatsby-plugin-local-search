@@ -54,6 +54,7 @@ const createLunrIndexExport = (
   const index = lunr(function () {
     this.ref(ref)
     fields.forEach((field) => this.field(field))
+    this.metadataWhitelist = ['position']
     documents.forEach((doc) => this.add(doc))
   })
 
